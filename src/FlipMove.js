@@ -133,7 +133,8 @@ class FlipMove extends Component<ConvertedProps, FlipMoveState> {
     }
   }
 
-  componentWillReceiveProps(nextProps: ConvertedProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps: ConvertedProps) {
     // When the component is handed new props, we need to figure out the
     // "resting" position of all currently-rendered DOM nodes.
     // We store that data in this.parent and this.children,
@@ -158,6 +159,7 @@ class FlipMove extends Component<ConvertedProps, FlipMoveState> {
     });
   }
 
+  // eslint-disable-next-line sort-class-members/sort-class-members
   componentDidUpdate(previousProps: ConvertedProps) {
     if (this.props.typeName === null) {
       this.findDOMContainer();
@@ -186,6 +188,7 @@ class FlipMove extends Component<ConvertedProps, FlipMoveState> {
     }
   }
 
+  // eslint-disable-next-line sort-class-members/sort-class-members
   findDOMContainer = () => {
     // eslint-disable-next-line react/no-find-dom-node
     const domNode = ReactDOM.findDOMNode(this);
@@ -207,6 +210,7 @@ class FlipMove extends Component<ConvertedProps, FlipMoveState> {
     this.parentData.domNode = parentNode;
   };
 
+  // eslint-disable-next-line sort-class-members/sort-class-members
   runAnimation = () => {
     const dynamicChildren = this.state.children.filter(
       this.doesChildNeedToBeAnimated,
@@ -227,6 +231,7 @@ class FlipMove extends Component<ConvertedProps, FlipMoveState> {
     }
   };
 
+  // eslint-disable-next-line sort-class-members/sort-class-members
   doesChildNeedToBeAnimated = (child: ChildData) => {
     // If the child doesn't have a key, it's an immovable child (one that we
     // do not want to do FLIP stuff to.)

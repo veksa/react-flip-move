@@ -876,7 +876,10 @@ var FlipMove$1 = function (_Component) {
     }
   };
 
-  FlipMove.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+
+
+  FlipMove.prototype.UNSAFE_componentWillReceiveProps = function UNSAFE_componentWillReceiveProps(nextProps) {
     // When the component is handed new props, we need to figure out the
     // "resting" position of all currently-rendered DOM nodes.
     // We store that data in this.parent and this.children,
@@ -898,6 +901,9 @@ var FlipMove$1 = function (_Component) {
       }) : this.calculateNextSetOfChildren(nextChildren)
     });
   };
+
+  // eslint-disable-next-line sort-class-members/sort-class-members
+
 
   FlipMove.prototype.componentDidUpdate = function componentDidUpdate(previousProps) {
     if (this.props.typeName === null) {
@@ -924,6 +930,15 @@ var FlipMove$1 = function (_Component) {
       this.runAnimation();
     }
   };
+
+  // eslint-disable-next-line sort-class-members/sort-class-members
+
+
+  // eslint-disable-next-line sort-class-members/sort-class-members
+
+
+  // eslint-disable-next-line sort-class-members/sort-class-members
+
 
   FlipMove.prototype.calculateNextSetOfChildren = function calculateNextSetOfChildren(nextChildren) {
     var _this2 = this;
